@@ -1,0 +1,16 @@
+name: 'ORYX QMK Firmware Compiler Action'
+author: 'Phoscur'
+description: 'Compiles QMK Firmware from ORYX source'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'settings'  
+  color: 'orange'
+inputs:
+  path:
+    description: 'Path to keymap source folder'
+    default: '.'
+  layout_id:
+    description: 'ORYX layout hash ID'
+    required: true
