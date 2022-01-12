@@ -8,7 +8,8 @@ qmk compile -kb moonlander -km neo
 echo "Overwrite keymap layout"
 ls $INPUT_PATH
 cp $INPUT_PATH/* /qmk_firmware/keyboards/moonlander/keymaps/neo
-echo "Compiling ..."
+ls /qmk_firmware/keyboards/moonlander/keymaps
+echo "Compiling neo  ..."
 qmk compile -kb moonlander -km neo
 echo "Done!"
 # outfile: .build/moonlander_neo.bin
