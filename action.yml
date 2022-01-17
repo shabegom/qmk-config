@@ -11,6 +11,9 @@ inputs:
   path:
     description: 'Path to keymap source folder'
     default: '.'
+  artifacts_path:
+    description: 'Path to output build results'
+    default: 'artifacts'
   layout_id:
     description: 'ORYX layout hash ID'
     required: true
