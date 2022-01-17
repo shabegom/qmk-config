@@ -17,3 +17,4 @@ echo "Copying out into artifacts folder ..."
 ls /qmk_firmware/.build
 cp -r /qmk_firmware/.build $ARTIFACTS_PATH
 echo "Done!"
+ls $ARTIFACTS_PATH
