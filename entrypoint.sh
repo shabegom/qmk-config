@@ -19,10 +19,10 @@ cp -r /qmk_firmware/.build $ARTIFACTS_PATH
 echo "Copy to ./artifacts"
 cp -r /qmk_firmware/.build ./artifacts
 echo "Done!"
-cwd
+pwd
 ls -ll
 echo "ls ./artifacs"
-ls -ll artifacts
+ls -ll ./artifacts
 echo "Artifacts at $ARTIFACTS_PATH:"
 ls $ARTIFACTS_PATH
 echo " --- "
