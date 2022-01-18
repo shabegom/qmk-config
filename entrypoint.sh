@@ -16,13 +16,14 @@ qmk compile -kb moonlander -km neo
 echo "Copying out into artifacts folder [$ARTIFACTS_PATH] ..."
 ls /qmk_firmware/.build
 cp -r /qmk_firmware/.build/* $ARTIFACTS_PATH
+ls -altr $ARTIFACTS_PATH
 echo "Copy to ./artifacts"
 cp -r /qmk_firmware/.build/* ./artifacts
 echo "Done!"
 pwd
-ls -ll
+ls -altr
 echo "ls ./artifacs"
-ls -ll ./artifacts
+ls -altr ./artifacts
 echo "Artifacts at $ARTIFACTS_PATH:"
 ls $ARTIFACTS_PATH
 echo " --- "
