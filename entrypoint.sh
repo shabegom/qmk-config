@@ -13,18 +13,15 @@ ls /qmk_firmware/keyboards/moonlander/keymaps
 echo "Compiling neo  ..."
 qmk compile -kb moonlander -km neo
 # outfile: .build/moonlander_neo.bin
-echo "Copying out into artifacts folder [$ARTIFACTS_PATH] ..."
-ls /qmk_firmware/.build
-cp -r /qmk_firmware/.build/* $ARTIFACTS_PATH
-ls -altr $ARTIFACTS_PATH
-echo "Copy to ./artifacts"
-cp -r /qmk_firmware/.build/* ./artifacts
-echo "Done!"
-pwd
+#echo "Copying out into artifacts folder [$ARTIFACTS_PATH] ..."
+#ls /qmk_firmware/.build
+#cp /qmk_firmware/.build/* $ARTIFACTS_PATH
+#ls -altr $ARTIFACTS_PATH
+echo "Copy to /github/workspace/artifacts"
+# pwd is /github/workspace
+if [ ! -d artifacts ]; then
+  mkdir artifacts
+fi
+cp /qmk_firmware/.build/* ./artifacts
 ls -altr
-echo "ls ./artifacs"
-ls -altr ./artifacts
-echo "Artifacts at $ARTIFACTS_PATH:"
-ls $ARTIFACTS_PATH
-echo " --- "
-ls artifacts
+echo "Done!"
