@@ -3,18 +3,21 @@
 LAYOUT_PATH="${INPUT_PATH:-layout_src}"
 ARTIFACTS_PATH="${INPUT_ARTIFACTS_PATH:-artifacts}"
 
+KEYMAP="${INPUT_KEYMAP:-neo}"
+KEYBOARD="${INPUT_KEYBOARD:-moonlander}"
+
 #echo "Setting up ZSA QMK fork ..."
 # moved into Dockerfile, TODO make configurable
 #qmk setup zsa/qmk_firmware -b firmware20
-echo "Adding keymap ..."
-qmk new-keymap -kb moonlander -km neo
+echo "Adding keymap $KEYMAP [$KEYBOARD] ..."
+qmk new-keymap -kb $KEYBOARD -km $KEYMAP
 
 echo "Overwrite keymap layout from $LAYOUT_PATH"
-cp $LAYOUT_PATH/* /qmk_firmware/keyboards/moonlander/keymaps/neo
-ls /qmk_firmware/keyboards/moonlander/keymaps
+cp $LAYOUT_PATH/* /qmk_firmware/keyboards/$KEYBOARD/keymaps/$KEYMAP
+ls /qmk_firmware/keyboards/$KEYBOARD/keymaps/$KEYMAP
 
-echo "Compiling neo  ..."
-qmk compile -kb moonlander -km neo
+echo "Compiling keymap $KEYMAP ..."
+qmk compile -kb $KEYBOARD -km $KEYMAP
 # outfile: .build/moonlander_neo.bin
 echo "Copying out into artifacts folder [$ARTIFACTS_PATH] ..."
 pwd # /github/workspace

@@ -1,4 +1,4 @@
-name: 'ORYX QMK Firmware Compiler Action'
+name: 'ORYX QMK Firmware Compiler Action (zsa only)'
 author: 'Phoscur'
 description: 'Compiles QMK Firmware from ORYX source'
 runs:
@@ -8,12 +8,19 @@ branding:
   icon: 'settings'  
   color: 'orange'
 inputs:
+  layout_id:
+    description: 'ORYX layout hash ID'
+    required: true
   path:
     description: 'Path to keymap source folder'
     default: '.'
   artifacts_path:
     description: 'Path to output build results'
     default: 'artifacts'
-  layout_id:
-    description: 'ORYX layout hash ID'
-    required: true
+  keymap:
+    description: 'Keymap name'
+    default: 'neo'
+  keyboard:
+    description: 'Keyboard type'
+    default: 'moonlander'
+  
