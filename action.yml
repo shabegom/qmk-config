@@ -23,4 +23,8 @@ inputs:
   keyboard:
     description: 'Keyboard type'
     default: 'moonlander'
-  
+  fork:
+    description: 'Fork of QMK on Github'
+    default: 'zsa/qmk_firmware'
+  branch:
+    description: 'Branch of fork. Uses default branch when empty'

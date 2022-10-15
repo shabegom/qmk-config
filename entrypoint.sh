@@ -6,9 +6,9 @@ ARTIFACTS_PATH="${INPUT_ARTIFACTS_PATH:-artifacts}"
 KEYMAP="${INPUT_KEYMAP:-neo}"
 KEYBOARD="${INPUT_KEYBOARD:-moonlander}"
 
-#echo "Setting up ZSA QMK fork ..."
-# moved into Dockerfile, TODO make configurable
-#qmk setup zsa/qmk_firmware -b firmware20
+echo "Setting up ZSA QMK fork ..."
+git clone ${INPUT_BRANCH:+-b $INPUT_BRANCH --single-branch} --recurse-submodules https://github.com/${INPUT_FORK}.git /qmk_firmware
+qmk setup -y
 echo "Adding keymap $KEYMAP [$KEYBOARD] ..."
 qmk new-keymap -kb $KEYBOARD -km $KEYMAP
 
