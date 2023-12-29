@@ -28,3 +28,4 @@ inputs:
     default: 'zsa/qmk_firmware'
   branch:
     description: 'Branch of fork. Uses default branch when empty'
+    default: 'firmware23'
