@@ -1,0 +1,37 @@
+name: 'ORYX QMK Firmware Compiler Action (zsa only)'
+author: 'Phoscur'
+description: 'Compiles QMK Firmware from ORYX source'
+
+on:
+  push:
+    workflow_dispatch:
+jobs:
+  build:
+   runs:
+     using: 'docker'
+     image: 'Dockerfile'
+   branding:
+     icon: 'settings'  
+     color: 'orange'
+   inputs:
+     layout_id: '3yRKw/b59WD'
+       description: 'ORYX layout hash ID'
+       required: true
+     path:
+       description: 'Path to keymap source folder'
+       default: '.'
+     artifacts_path:
+       description: 'Path to output build results'
+       default: 'artifacts'
+     keymap:
+       description: 'Keymap name'
+       default: 'samlander'
+     keyboard:
+       description: 'Keyboard type'
+       default: 'moonlander'
+     fork:
+       description: 'Fork of QMK on Github'
+       default: 'zsa/qmk_firmware'
+     branch:
+       description: 'Branch of fork. Uses default branch when empty'
+       default: 'firmware23'
